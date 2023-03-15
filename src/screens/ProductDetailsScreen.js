@@ -15,6 +15,10 @@ const ProductDetailsScreen = () => {
 
   const { width } = useWindowDimensions();
 
+  const addToCart = () => {
+    console.warn("add to cart");
+  };
+
   return (
     <View>
       <ScrollView>
@@ -34,8 +38,8 @@ const ProductDetailsScreen = () => {
           <Text styles={styles.description}>{product.description}</Text>
         </View>
       </ScrollView>
-      <Pressable>
-        <Text>Add to Cart</Text>
+      <Pressable onPress={addToCart} style={styles.button}>
+        <Text styl={styles.buttonText}>Add to Cart</Text>
       </Pressable>
     </View>
   );
@@ -57,6 +61,22 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 30,
     fontWeight: "300",
+  },
+  button: {
+    position: "absolute",
+    backgroundColor: "black",
+    bottom: 30,
+    width: "90%",
+    alignSelf: "center",
+    padding: 20,
+    borderRadius: 100,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "white",
+    fontWeight: "500",
+    fontSize: 16,
   },
 });
 
